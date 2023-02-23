@@ -22,17 +22,14 @@ class ValidAnagramSolution:
             sDictionary[i] = sDictionary.get(i, 0) + 1
 
 
+
         # create a dictionary for string t{ key = letter: value = it's counts}
         for j in t:
             tDictionary[j] = tDictionary.get(t, 0)  + 1
 
 
-        if sDictionary == tDictionary:
-            print(True)
-            return True
 
-        print(False)
-        return False
+        return sDictionary.values() == tDictionary.values()
         # return sDictionary == tDictionary
 
 
