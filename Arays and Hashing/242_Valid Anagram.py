@@ -17,22 +17,26 @@ class ValidAnagramSolution:
         sDictionary = {}
         tDictionary = {}
 
-        # create a dictionary for string s{ key = letter: value = it's counts}
-        for i in s:
-            sDictionary[i] = sDictionary.get(i, 0) + 1
+        # return false if the len is not equal
+        if len(s) != len(t):
+            print(False)
+            return False
 
+        # create a dictionary for both string s and t{ key = letter: value = it's counts}
+        for i in range(len(s)):
+            sDictionary[s[i]] = sDictionary.get(s[i], 0) + 1
+            tDictionary[t[i]] = tDictionary.get(t[i], 0)  + 1
 
+        for i in sDictionary:
+            if sDictionary[i] != tDictionary.get(i, 0):
+                print(False)
 
-        # create a dictionary for string t{ key = letter: value = it's counts}
-        for j in t:
-            tDictionary[j] = tDictionary.get(t, 0)  + 1
+                return False
 
-
-
-        return sDictionary.values() == tDictionary.values()
-        # return sDictionary == tDictionary
+        print(True)
+        return True
 
 
 anagamClass = ValidAnagramSolution()
 
-anagram = anagamClass.solution("anagram", "nagaram")
+anagram = anagamClass.solution("anagram", "nagaram") #return true as expected
