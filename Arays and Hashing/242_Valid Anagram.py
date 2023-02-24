@@ -39,4 +39,4 @@ class ValidAnagramSolution:
 
 anagamClass = ValidAnagramSolution()
 
-anagram = anagamClass.solution("anagram", "nagaram") #return true as expected
+anagram = anagamClass.solution("anagram", "nagaram") #returns true as expected
