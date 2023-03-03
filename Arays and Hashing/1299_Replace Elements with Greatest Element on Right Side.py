@@ -20,3 +20,18 @@
 # Input: arr = [400]
 # Output: [-1]
 # Explanation: There are no elements to the right of index 0.
+
+
+class ReplaceElementsClass:
+    def replaceElements(self, arr: list[int]) -> list[int]:
+        for i in range(len(arr)):
+            for k in range(i+1, len(arr)):
+                m = max(i, k)
+                arr[i] = m
+        print(arr)
+        return arr
+    
+
+replaceEl = ReplaceElementsClass()
+
+replaceEl.replaceElements(arr = [17,18,5,4,6,1])
